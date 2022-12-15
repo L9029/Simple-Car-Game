@@ -31,6 +31,9 @@ car2 = pygame.image.load(cfg.other_car) # search the image
 car2_loc = car2.get_rect() # Car2 rect
 car2_loc.center = left_lane, cfg.HEIGHT * 0.2 # Car2 location
 
+left = 0
+right = 0
+
 while running:
     # dificulty of the game
     counter += 1
@@ -54,18 +57,23 @@ while running:
         print("GAME OVER! YOU LOST!")
         break
     
-    # Game loop
+    #Game loop
     for event in pygame.event.get():
         if event.type == QUIT:
             running = False
         
+        #Moving
         if event.type == KEYDOWN:
             # Move the car to the left
-            if event.key in [K_a, K_LEFT]:
-                car_loc = car_loc.move([-int(road_w / 2), 0])
+            if event.key in [K_a, K_LEFT] and left == 0:
+                car_loc = car_loc.move([-(road_w / 2), 0])
+                left = 1
+                right = 1
             # Move the car to the right    
-            if event.key in list((K_d, K_RIGHT)):
-                car_loc = car_loc.move([int(road_w / 2), 0])
+            if event.key in [K_d, K_RIGHT] and right == 1:
+                car_loc = car_loc.move([(road_w / 2), 0])
+                right = 0
+                left = 0
     
     # Draw Graphics
     pygame.draw.rect(screen, (50, 50, 50), (cfg.WIDTH/2 - road_w/2, 0, road_w, cfg.HEIGHT)) # Road rect
