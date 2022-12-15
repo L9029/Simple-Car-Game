@@ -10,6 +10,8 @@ running = True
 screen = pygame.display.set_mode((cfg.WIDTH, cfg.HEIGHT)) # Size of the screen
 screen.fill((60, 220, 220)) # This set the background color
 pygame.display.set_caption("Cars") # This set title
+speed = 3
+counter = 0
 
 # Road
 road_w = int(cfg.WIDTH/1.6)
@@ -30,8 +32,16 @@ car2_loc = car2.get_rect() # Car2 rect
 car2_loc.center = left_lane, cfg.HEIGHT * 0.2 # Car2 location
 
 while running:
+    # dificulty of the game
+    counter += 1
+    
+    if counter == 3000:
+        speed += 0.25
+        counter = 0
+        print("LEVEL UP! " + str(speed))
+    
     #Animate enemy vehicle
-    car2_loc[1] += 1
+    car2_loc[1] += speed
     
     if car2_loc[1] > cfg.HEIGHT:
         if random.randint(0, 1) == 0:
