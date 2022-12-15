@@ -1,0 +1,47 @@
+[33mcommit 6ecef5a89b77ea3589c8e5366be86f89b06a9b2d[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Thu Dec 15 10:59:55 2022 -0400
+
+    Car Game V1.7 "Fixing the bug of the car out the road"
+
+[33mcommit fd37106c751025d11cbd8a71fe0c370787217e62[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Thu Dec 15 10:18:54 2022 -0400
+
+    Car Game V1.6 "Making the game dificulty and the speed of the enemy car"
+
+[33mcommit b4b390ad1ac7122b923e9ed4b8df4e2ce5bfedb5[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Thu Dec 15 09:56:07 2022 -0400
+
+    Car Game V1.5 "Making the End game logic and the random enemy moving"
+
+[33mcommit 1c853f58e59ac582a5b3b2e11adc09472f8a3697[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Wed Dec 14 16:56:28 2022 -0400
+
+    Car Game V1.4 "Animating the moving of the player and the enemy"
+
+[33mcommit c7d886c95b357090e712da7b0157118ced0d96ec[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Wed Dec 14 14:23:58 2022 -0400
+
+    Car Game V1.3 "Loadings the images of the cars and the locations of them"
+
+[33mcommit 9feacbcbb8749b716072e9f2e79c55e839502533[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Wed Dec 14 13:08:33 2022 -0400
+
+    Car Game V1.2 "Setting Backgroud color, title of the window and the rectangulars"
+
+[33mcommit f66130857bda0da943cea4c8bbc7a34bf4dd86e7[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Tue Dec 13 16:05:12 2022 -0400
+
+    Car Game V1.1 "Creating screen size and while loop"
+
+[33mcommit d219071b32c3d80b417b87da190e017f49cc070f[m
+Author: L9029 <angeloca03@gmail.com>
+Date:   Tue Dec 13 14:49:13 2022 -0400
+
+    Car Game V1.0

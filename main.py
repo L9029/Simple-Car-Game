@@ -2,6 +2,7 @@ import cfg
 import pygame
 from pygame.locals import *
 import random
+import os
 
 pygame.init()
 
@@ -34,6 +35,13 @@ car2_loc.center = left_lane, cfg.HEIGHT * 0.2 # Car2 location
 left = 0
 right = 0
 
+# Score and highest path
+score = 0
+highest_score = 0 if not os.path.exists(cfg.HIGHEST_SCORE_RECORD_FILEPATH) else int(open(cfg.HIGHEST_SCORE_RECORD_FILEPATH).read())
+
+pygame.font.init()
+font = pygame.font.Font(cfg.FONT_PATH, 40)
+
 while running:
     # dificulty of the game
     counter += 1
@@ -42,6 +50,9 @@ while running:
         speed += 0.25
         counter = 0
         print("LEVEL UP! " + str(speed))
+        score = score + 1
+        if score > highest_score:
+            highest_score = score
     
     #Animate enemy vehicle
     car2_loc[1] += speed
@@ -85,6 +96,25 @@ while running:
     
     screen.blit(car, car_loc) # Car Graphic
     screen.blit(car2, car2_loc) # Car2 Graphic
+    
+    #Draw the score in the screen
+    score_text = 'Score: {}'.format(score)
+    score_text = font.render(score_text, True, (255,255,255))
+    score_rect = score_text.get_rect()
+    score_rect.topleft = [5, 5]
+    screen.blit(score_text, score_rect)
+    
+    #Draw the highest score in the screen
+    highest_score_text = 'Highest: {}'.format(highest_score)
+    highest_score_text = font.render(highest_score_text, True, (255,255,255))
+    highest_score_rect = highest_score_text.get_rect()
+    highest_score_rect.topright = [800, 6]
+    screen.blit(highest_score_text, highest_score_rect)
     pygame.display.update()
+
+# Saving the score
+fp = open(cfg.HIGHEST_SCORE_RECORD_FILEPATH, 'w')
+fp.write(str(highest_score))
+fp.close()
 
 pygame.quit()
