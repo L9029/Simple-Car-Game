@@ -11,7 +11,7 @@ running = True
 screen = pygame.display.set_mode((cfg.WIDTH, cfg.HEIGHT)) # Size of the screen
 screen.fill((60, 220, 220)) # This set the background color
 pygame.display.set_caption("Cars") # This set title
-speed = 3
+speed = 1
 counter = 0
 
 # Road
