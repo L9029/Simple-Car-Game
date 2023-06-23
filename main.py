@@ -11,7 +11,7 @@ running = True
 screen = pygame.display.set_mode((cfg.WIDTH, cfg.HEIGHT)) # Size of the screen
 screen.fill((60, 220, 220)) # This set the background color
 pygame.display.set_caption("Cars") # This set title
-speed = 1
+speed = 1.5
 counter = 0
 
 # Road
@@ -35,7 +35,7 @@ car2_loc.center = left_lane, cfg.HEIGHT * 0.2 # Car2 location
 left = 0
 right = 0
 
-# Score and highest path
+# Score and highest path (some issues with this part of the code)
 score = 0
 highest_score = 0 if not os.path.exists(cfg.HIGHEST_SCORE_RECORD_FILEPATH) else int(open(cfg.HIGHEST_SCORE_RECORD_FILEPATH).read())
 
